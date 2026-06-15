@@ -7,55 +7,105 @@
 
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       height: 100vh;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       font-family: Arial, sans-serif;
-
-      background: linear-gradient(135deg, #0a3d91, #1e90ff);
-      padding: 20px;
+      background: #081c2c;
+      color: white;
+      overflow: hidden;
     }
 
-    .glass-box {
+    .container {
       width: 100%;
-      max-width: 600px;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 40px;
+    }
 
-      border-radius: 20px;
-
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-      text-align: center;
-      color: white;
+    .text {
+      z-index: 2;
     }
 
     h1 {
-      margin: 0;
+      font-size: clamp(2.5rem, 6vw, 4rem);
       font-weight: 600;
-      letter-spacing: 2px;
-
-      /* Responsive Font */
-      font-size: clamp(2rem, 8vw, 3.5rem);
-
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-      word-break: break-word;
     }
 
-    /* Kleine Displays */
-    @media (max-width: 480px) {
-      .glass-box {
-        padding: 30px 20px;
+    .shapes {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(10px);
+    }
+
+    .blue {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, #3bc1ff, transparent 70%);
+      top: 5%;
+      right: 30%;
+    }
+
+    .light {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #88ffff, transparent 70%);
+      top: 15%;
+      right: 10%;
+    }
+
+    .orange {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, #ff7a18, transparent 70%);
+      bottom: 10%;
+      right: 5%;
+    }
+
+    .pink {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #ff0066, transparent 70%);
+      bottom: 0;
+      right: 20%;
+    }
+
+    .circle {
+      animation: float 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-30px); }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .shapes {
+        width: 100%;
+        opacity: 0.5;
       }
     }
 
@@ -63,8 +113,17 @@
 </head>
 <body>
 
-  <div class="glass-box">
-    <h1>webcp.network</h1>
+  <div class="container">
+    <div class="text">
+      <h1>WebCP Network</h1>
+    </div>
+  </div>
+
+  <div class="shapes">
+    <div class="circle blue"></div>
+    <div class="circle light"></div>
+    <div class="circle orange"></div>
+    <div class="circle pink"></div>
   </div>
 
 </body>
