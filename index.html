@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>webcp.network</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+
+      background: linear-gradient(135deg, #0a3d91, #1e90ff);
+      padding: 20px;
+    }
+
+    .glass-box {
+      width: 100%;
+      max-width: 600px;
+      padding: 40px;
+
+      border-radius: 20px;
+
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: 2px;
+
+      /* Responsive Font */
+      font-size: clamp(2rem, 8vw, 3.5rem);
+
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+      word-break: break-word;
+    }
+
+    /* Kleine Displays */
+    @media (max-width: 480px) {
+      .glass-box {
+        padding: 30px 20px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="glass-box">
+    <h1>webcp.network</h1>
+  </div>
+
+</body>
+</html>
