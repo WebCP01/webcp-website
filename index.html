@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -5,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>webcp.network</title>
   <link rel="icon" href="favicon.ico">
+  
   <style>
     * {
       margin: 0;
@@ -23,16 +25,14 @@
       overflow: hidden;
     }
 
-    .container {
+    main {
       width: 100%;
       max-width: 1200px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 40px;
-    }
-
-    .text {
+      position: relative;
       z-index: 2;
     }
 
@@ -41,19 +41,20 @@
       font-weight: 600;
     }
 
+    /* Shapes */
     .shapes {
       position: absolute;
-      right: 0;
-      top: 0;
-      width: 50%;
-      height: 100%;
+      inset: 0;
       overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
     }
 
     .circle {
       position: absolute;
       border-radius: 50%;
       filter: blur(10px);
+      animation: float 12s ease-in-out infinite alternate;
     }
 
     .blue {
@@ -88,43 +89,26 @@
       right: 20%;
     }
 
-    .circle {
-      animation: float 12s ease-in-out infinite alternate;
-    }
-
     @keyframes float {
       from { transform: translateY(0px); }
       to { transform: translateY(-30px); }
     }
 
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .shapes {
-        width: 100%;
-        opacity: 0.5;
-      }
-    }
-
   </style>
 </head>
 <body>
-<main>
-  <div class="container">
-    <div class="text">
-      <h1>webcp network</h1>
-    </div>
-  </div>
-</main>
-  <div class="shapes">
+
+  <div class="shapes" aria-hidden="true">
     <div class="circle blue"></div>
     <div class="circle light"></div>
     <div class="circle orange"></div>
     <div class="circle pink"></div>
   </div>
 
+  <main>
+    <h1>webcp network</h1>
+  </main>
+
 </body>
 </html>
+
